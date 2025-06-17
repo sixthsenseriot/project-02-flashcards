@@ -11,8 +11,12 @@ const Flashcard = ({ frontText, backText }) => {
         <div className="Flashcard">
             <div className="flashcard-container" onClick={handleClick}>
                 <div className={`flashcard ${isFlipped ? "flipped" : ""}`}>
-                    <div className="front">{frontText}</div>
-                    <div className="back">{backText}</div>
+                    <div className="front">
+                        <div className="content">{frontText}</div>
+                    </div>
+                    <div className="back">
+                        <div className="content">{backText}</div>
+                    </div>
                 </div>
             </div>
         </div>
