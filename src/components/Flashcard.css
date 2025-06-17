@@ -6,8 +6,8 @@
 
 .flashcard-container {
     perspective: 1000px;
-    min-width: 700px;
-    height: 400px;
+    min-width: 720px;
+    height: 420px;
     cursor: pointer;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .flashcard .content {
-    padding: 1.5rem; /* or whatever you prefer */
+    padding: 1.5rem;
     text-align: center;
     width: 100%;
     height: 100%;
@@ -33,6 +33,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 22px;
 }
 
 .flashcard.flipped {
