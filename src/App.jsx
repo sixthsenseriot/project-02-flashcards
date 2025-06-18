@@ -1,11 +1,33 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Flashcard from "./components/Flashcard";
-import { flashcards } from "./data/flashcards";
+import { flashcards as originalFlashcards } from "./data/flashcards";
 
 const App = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isFlipped, setIsFlipped] = useState(false);
+    const [isRandom, setIsRandom] = useState(false);
+    const [flashcards, setFlashcards] = useState(originalFlashcards);
+
+    const shuffleFlashcards = () => {
+        const shuffled = [...originalFlashcards].sort(
+            () => Math.random() - 0.5
+        );
+        setFlashcards(shuffled);
+        setCurrentIndex(0);
+        setIsFlipped(false);
+    };
+
+    const handleRandomToggle = () => {
+        if (!isRandom) {
+            shuffleFlashcards();
+        } else {
+            setFlashcards(originalFlashcards);
+            setCurrentIndex(0);
+            setIsFlipped(false);
+        }
+        setIsRandom(!isRandom);
+    };
 
     const handleNext = () => {
         setCurrentIndex((prev) => (prev + 1) % flashcards.length);
@@ -25,28 +47,21 @@ const App = () => {
 
     useEffect(() => {
         const handleKeyDown = (e) => {
-            if (e.key === "ArrowRight") {
-                handleNext();
-            } else if (e.key === "ArrowLeft") {
-                handlePrev();
-            } else if (e.key === " " || e.code === "Space") {
+            if (e.key === "ArrowRight") handleNext();
+            else if (e.key === "ArrowLeft") handlePrev();
+            else if (e.key === " " || e.code === "Space") {
                 e.preventDefault();
                 handleFlip();
             }
         };
-
         window.addEventListener("keydown", handleKeyDown);
-        return () => {
-            window.removeEventListener("keydown", handleKeyDown);
-        };
-    }, []);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [flashcards]);
 
     return (
         <div className="App">
             <h1>CompTIA A+ (220-1102)</h1>
-            <h3>
-                Flashcards to you help prep for your next upcoming Core 1 exam!
-            </h3>
+            <h3>Flashcards to help prep for your next upcoming Core 1 exam!</h3>
             <p className="flashcard-length">
                 {currentIndex + 1} / {flashcards.length}
             </p>
@@ -64,6 +79,12 @@ const App = () => {
                     ▶
                 </button>
             </div>
+            <button
+                className={`randomize-button ${isRandom ? "active" : ""}`}
+                onClick={handleRandomToggle}
+            >
+                {isRandom ? "Randomized" : "Unrandomized"}
+            </button>
         </div>
     );
 };
