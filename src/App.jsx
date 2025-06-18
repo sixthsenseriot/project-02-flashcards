@@ -30,7 +30,7 @@ const App = () => {
             } else if (e.key === "ArrowLeft") {
                 handlePrev();
             } else if (e.key === " " || e.code === "Space") {
-                e.preventDefault(); // Prevent page scroll
+                e.preventDefault();
                 handleFlip();
             }
         };
