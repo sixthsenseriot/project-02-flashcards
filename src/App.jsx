@@ -83,7 +83,7 @@ const App = () => {
                 className={`randomize-button ${isRandom ? "active" : ""}`}
                 onClick={handleRandomToggle}
             >
-                {isRandom ? "Randomized" : "Unrandomized"}
+                {isRandom ? "Unrandomize" : "Randomize"}
             </button>
         </div>
     );
