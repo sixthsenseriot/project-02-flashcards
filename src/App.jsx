@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Flashcard from "./components/Flashcard";
 import { flashcards } from "./data/flashcards";
@@ -18,6 +18,29 @@ const App = () => {
         );
         setIsFlipped(false);
     };
+
+    const handleFlip = () => {
+        setIsFlipped((prev) => !prev);
+    };
+
+    // 🧠 Add keyboard listeners
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === "ArrowRight") {
+                handleNext();
+            } else if (e.key === "ArrowLeft") {
+                handlePrev();
+            } else if (e.key === " " || e.code === "Space") {
+                e.preventDefault(); // Prevent page scroll
+                handleFlip();
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, []);
 
     return (
         <div className="App">
