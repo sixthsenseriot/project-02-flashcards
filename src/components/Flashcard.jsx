@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Flashcard.css";
 
-const Flashcard = ({ frontText, backText }) => {
-    const [isFlipped, setIsFlipped] = useState(false);
+const Flashcard = ({ frontText, backText, isFlipped, setIsFlipped }) => {
     const handleClick = () => {
         setIsFlipped(!isFlipped);
     };
