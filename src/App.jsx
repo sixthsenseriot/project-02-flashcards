@@ -44,7 +44,9 @@ const App = () => {
     return (
         <div className="App">
             <h1>CompTIA A+ (220-1102)</h1>
-            <h3>Flashcards to help prep for your next upcoming Core 1 exam!</h3>
+            <h3>
+                Flashcards to you help prep for your next upcoming Core 1 exam!
+            </h3>
             <p className="flashcard-length">
                 {currentIndex + 1} / {flashcards.length}
             </p>
