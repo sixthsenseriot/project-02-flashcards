@@ -4,6 +4,8 @@ Submitted by: **Khanh Nguyen**
 
 **CompTIA A+ Core 1 Flashcards** is a simple and responsive web application designed to help users study for the CompTIA A+ (220-1102) certification exam. Users can flip through cards to view questions and answers, and navigate by using space and arrow keys, or by manually clicking. It's a focused, no-frills tool built for efficient test prep.
 
+🔗 [View Live Website](https://comptia-core1.netlify.app/)
+
 Time spent: **8** hours spent in total
 
 ## Required Features
@@ -20,7 +22,7 @@ The following **required** functionality is completed:
 - [X] **Clicking on the card flips the card over, showing the corresponding component of the information pair**
   - [X] Clicking on a card flips it over, showing the back with corresponding information 
   - [X] Clicking on a flipped card again flips it back, showing the front
-- [ ] **Clicking on the next button displays a random new card**
+- [X] **Clicking on the next button displays a random new card**
 
 The following **optional** features are implemented:
 - [ ] Cards contain images in addition to or in place of text
@@ -32,26 +34,28 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 * [X] Flashcards can be navigated via space and arrow keys (left and right for previous and next, and space to flip flashcard)
+* [X] Randomize and unrandomize can be toggled for flashcards
 
 ## Video Walkthrough
-
 Here's a walkthrough of implemented required features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![Website Walkthrough](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDR2OWFreTlyOHh2bmx5Ym91eTQ0NnBoZTJ3dTd1NHAzMnkzNTIwdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U6E0VcQn1mqGKfYUs1/giphy.gif)
+
+🔗 [Link for Better Viewing of Walkthrough](https://imgur.com/gallery/codepath-project-2-flashcards-kn-5aW8ODx)
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+GIF created with [LICEcap v1.32](https://www.cockos.com/licecap/)
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
 [peek](https://github.com/phw/peek) for Linux. -->
 
 ## Notes
+One of the biggest challenges in building this app was understanding the role of each `useState` implementation and how state changes affect the user experience. Managing the current flashcard index, tracking whether a card is flipped, and resetting the flipped state when navigating between cards required careful state coordination.
 
-Describe any challenges encountered while building the app.
+Another key hurdle was implementing the flip animation itself. Ensuring that the card flips smoothly and consistently, while also resetting to the front side when switching cards, involved setting up CSS 3D transforms and integrating them cleanly with the `setIsFlipped` logic.
 
 ## License
-
     Copyright 2025 Khanh Nguyen
 
     Licensed under the Apache License, Version 2.0 (the "License");
