@@ -23,7 +23,6 @@ const App = () => {
         setIsFlipped((prev) => !prev);
     };
 
-    // 🧠 Add keyboard listeners
     useEffect(() => {
         const handleKeyDown = (e) => {
             if (e.key === "ArrowRight") {
