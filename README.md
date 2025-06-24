@@ -4,8 +4,6 @@ Submitted by: **Khanh Nguyen**
 
 **CompTIA A+ Core 1 Flashcards** is a simple and responsive web application designed to help users study for the CompTIA A+ (220-1102) certification exam. Users can flip through cards to view questions and answers, and navigate by using space and arrow keys, or by manually clicking. It's a focused, no-frills tool built for efficient test prep.
 
-🔗 [View Live Website](https://comptia-core1.netlify.app/)
-
 Time spent: **8** hours spent in total
 
 ## Required Features
